@@ -1,6 +1,54 @@
 //***Declaration de ma variables $firstcolor a la lequel j'applique la coleur blue****
-$firstcolor: blue;
-//**J'applique la variables a la coleur de mon h3***
-h3{
-  color: $firstcolor;
+$colorRed: #ff0000;
+$colorGreen: #10d113;
+$colorBlue: #0000FF;
+//applique les mixins****
+@mixin first_mixin{
+  font-size: 2rem;
+  font-family: serif;
+  color: #4253d6;
+}
+@mixin second_mixin{
+  font-size: 3rem;
+  font-family: Helvetica;
+  color:#d6d611;
+}
+@mixin list_mixin{
+  color: #f7a313;
+  text-decoration: line-through;
+}
+p ~ ul{
+  @include list_mixin;
+}
+.titre{
+  color: $colorBlue;
+}
+h1, strong{
+  color: $colorRed;
+}
+p:first-child{
+  color: $colorGreen;
+}
+p:nth-child(2){
+  @include first_mixin;
+}
+p:nth-child(3), li:first-of-type{
+  @include second_mixin;
+}
+.exo_4{
+  border: 5px dotted green;
+  font-size: 2.5rem;
+  line-height: 2;
+  background-color: #f1ddcf;
+}
+.exo_5_extention{
+  @extend .exo_5;
+  text-decoration: underline;
+}
+p:last-child{
+    border: 10px dashed pink;
+    &:hover {
+        color:red;
+        text-decoration: overline;
+    }
 }
