@@ -1,0 +1,6 @@
+//***Declaration de ma variables $firstcolor a la lequel j'applique la coleur blue****
+$firstcolor: blue;
+//**J'applique la variables a la coleur de mon h3***
+h3{
+  color: $firstcolor;
+}
